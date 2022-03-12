@@ -49,7 +49,7 @@ Execution Engine에서 클래스파일(바이트코드로 구성)을 기계어�
 
 #### jit compiler
 jit(just in time) 컴파일러는 jvm 의 구성 요소로, 바이트코드를 바이너리로 컴파일하는 역할을 한다.
-
+<https://catch-me-java.tistory.com/11>
 
 
 ### 바이트코드란 무엇인가
