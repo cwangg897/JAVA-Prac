@@ -48,7 +48,7 @@ Execution Engine에서 클래스파일(바이트코드로 구성)을 기계어�
 실제로 jvm을 통해서 바이트코드가 메모리상에 올라갈때 기계어로 바뀌게 된다.
 
 #### jit compiler
-jit(just in time) 컴파일러는 jvm 의 구성 요소로, 바이트코드를 바이너리로 컴파일하는 역할을 한다.
+jit(just in time) 컴파일러는 jvm 의 구성 요소로, 바이트코드를 바이너리로 컴파일하는 역할을 한다. <br>
 <https://catch-me-java.tistory.com/11>
 
 
