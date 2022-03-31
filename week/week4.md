@@ -20,25 +20,17 @@
 
 
 
-### 과제 2. LinkedList를 구현하세요. (진행중)
+### 과제 2. LinkedList를 구현하세요. (1번 완료)
 - LinkedList에 대해 공부하세요.
 
 
-
-
-
-
-
-
-
-
-### 과제 3. Stack을 구현하세요.
+### 과제 3. Stack을 구현하세요. (1번 완료)
 - int 배열을 사용해서 정수를 저장하는 Stack을 구현하세요.
 - void push(int data)를 구현하세요.
 - int pop()을 구현하세요.
 
 
-### 과제 4. 앞서 만든 ListNode를 사용해서 Stack을 구현하세요.
+### 과제 4. 앞서 만든 ListNode를 사용해서 Stack을 구현하세요. (1번 완료)
 - ListNode head를 가지고 있는 ListNodeStack 클래스를 구현하세요.
 - void push(int data)를 구현하세요.
 - int pop()을 구현하세요.
