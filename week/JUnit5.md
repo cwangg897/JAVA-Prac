@@ -51,7 +51,7 @@ class StudyTest {
 ### JUnit 5: 테스트 이름 표시하기
 #### 기본적인 방법
 ```java
-@Test
+    @Test
     void create_new_study(){ // Camel Case 보다 언더바를 이용하게 읽기편하게 이름을 표시할 수 있다.
         Study study = new Study();
         assertNotNull(study);
@@ -66,7 +66,7 @@ class StudyTest {
 
 #### @DisplayName
 ```java
-@Test
+    @Test
     @DisplayName("스터디 만들기") // 이방법이 더 많이사용된다. (장점 이모지를 사용할수있다)
     void create_new_study(){ // Camel Case 보다 언더바를 이용하게 읽기편하게 이름을 표시할 수 있다.
         Study study = new Study();
@@ -95,7 +95,7 @@ class StudyTest {
 그래서 나온 해결방법이 asssertAll로 묶어줘야하는데 이떄 주의사항은 람다식으로 묶어줘야한다.<br>
 
 ```java
-@Test
+    @Test
     @DisplayName("스터디 만들기")
     void create_new_study(){ // Camel Case 보다 언더바를 이용하게 읽기편하게 이름을 표시할 수 있다.
         Study study = new Study();
@@ -112,7 +112,7 @@ class StudyTest {
 ### JUnit 5: 조건에 따라 테스트 실행하기
 특정한 환경이나 OS에 따라 실행하거나 하지말아야할때 assume을 사용한다. <br>
 ```java
-@Test
+    @Test
     @DisplayName("스터디 만들기")
     @EnabledOnOs(OS.MAC) // @DisabledOnOs
     void create_new_study(){ // Camel Case 보다 언더바를 이용하게 읽기편하게 이름을 표시할 수 있다.
@@ -125,7 +125,7 @@ class StudyTest {
 
 ### JUnit 5: 태깅과 필터링
 ```java
-@Test
+    @Test
     @DisplayName("스터디 만들기 fast")
     @Tag("fast")
     void create_new_study(){ 
