@@ -190,5 +190,29 @@ class StudyTest {
 ```
 
 ### JUnit 5: 테스트 순서
+@TestInstance(Lifecycle.PER_CLASS)와 함께 사용하면 상태도 공유하고 순서도 정할 수 있다.<br>
+서로간에 상태를 공유하지 않는 단위테스트의경우는 굳이 순서를 줄필요는없을것같고 로그인하고 이제 다른로직을 실행하는 연속적인 과정에서 사용할것같다. 즉 LifeCycle이 한번인 경우에<br>
+```java
+@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
+class StudyTest {
+
+
+    @Order(1)
+    @Test
+    @DisplayName("스터디 만들기 fast")
+    @Tag("fast")
+    void create_new_study(){
+        System.out.println("create new study");
+
+    }
+
+    @Order(2)
+    @Test
+    @DisplayName("스터디 만들기 slow")
+    @Tag("slow")
+    void create1(){
+        System.out.println("create1");
+    }
+```
 
 
