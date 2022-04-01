@@ -121,3 +121,74 @@ class StudyTest {
 
     }
 ```
+
+
+### JUnit 5: 태깅과 필터링
+```java
+@Test
+    @DisplayName("스터디 만들기 fast")
+    @Tag("fast")
+    void create_new_study(){ 
+        System.out.println("create new study");
+
+    }
+
+    @Test
+    @DisplayName("스터디 만들기 slow")
+    @Tag("slow")
+    void create1(){
+        System.out.println("create1");
+    }
+```
+tag로 해놓으면 인텔리제이에서 기존에는 실행시키면 모든걸 다시키는데 설정을 하면 tag로 fast로만 해놓은것만 실행시키거나 slow로 적혀진 테그만 실행시키도록 할 수 있다.<br>
+
+
+### JUnit 5: 커스텀 태그
+```java
+@Target(ElementType.METHOD)
+@Retention(RetentionPolicy.RUNTIME)
+@Test
+@Tag("fast")
+public @interface FastTest {
+}
+```
+
+### JUnit 5: 테스트 반복하기 1부
+```java
+@DisplayName("스터디 만들기")
+    @RepeatedTest(value = 10, name = "{DisplayName}, {currentRepetition}") // 이렇게 이름 만들 수 있음
+    void repeatTest(RepetitionInfo repetitionInfo){
+        System.out.println("repeatTest"+ repetitionInfo.getCurrentRepetition()
+        +"-"+repetitionInfo.getTotalRepetitions());
+    }    
+
+@DisplayName("계절")
+@ParameterizedTest(name = "{index} {displayName}")
+@ValueSource(strings = {"봄", "여름", "가을", "겨울"})
+    void parameterTest(String season){
+        System.out.println(season);
+    }
+    
+```
+반복횟수를 가지고 가능하고 RepeatitionInfo를 통해 몇번이랑 총 몇번해야하는지 적을 수 있다. <br>
+
+
+
+### JUnit 5: 테스트 인스턴스
+<pre>
+JUnit은 테스트 메소드 마다 테스트 인스턴스를 새로 만든다. 
+이것이 기본 전략.
+테스트 메소드를 독립적으로 실행하여 예상치 못한 부작용을 방지하기 위함이다. 
+왜냐하면 테스트를 인스턴스를 어떤 테스트를 먼저하면 값이 변하기때문에 불안정하기때문에 이렇게 메소드 마다 인스턴스를 만들게된다.
+그리고 테스트 순서는 예측을 할수없기떄문이다.
+이 전략을 JUnit 5에서 변경할 수 있다. 
+</pre>
+
+```java
+@TestInstance(TestInstance.Lifecycle.PER_CLASS)
+class StudyTest {
+```
+
+### JUnit 5: 테스트 순서
+
+
